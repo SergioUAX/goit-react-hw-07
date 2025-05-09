@@ -1,0 +1,44 @@
+.formikForm {
+    border: 1px solid #c2c2c2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formikForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formikForm input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+}
+
+.formikForm span {
+    color: red;
+    font-size: 12px;
+}
+
+.formikForm button {
+    align-self: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.formikForm button:hover {
+    background-color: #e3e3e3;
+}

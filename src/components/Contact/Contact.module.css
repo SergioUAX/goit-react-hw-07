@@ -1,0 +1,38 @@
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: white;
+    gap: 12px;
+    min-width: 280px;
+}
+
+.contact p {
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.contact button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    height: fit-content;
+    align-self: center;
+}
+
+.contact button:hover {
+    background-color: #e0e0e0;
+}
+
+.contact svg {
+    flex-shrink: 0;
+}
