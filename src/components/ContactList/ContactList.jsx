@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Contact from '../Contact/Contact';
 import styles from './ContactList.module.css';
-import { deleteContact } from '../../redux/contactsSlice';
+import { selectContacts, selectError, selectNameFilter , selectLoading } from '../../redux/selectors';
+import { deleteContact } from '../../redux/contactsOps';
 
 const ContactList = () => {
-    const contactsList = useSelector((state) => state.contacts.items);
-    const filterValue = useSelector((state) => state.filters.name);
+    const contactsList = useSelector(selectContacts);
+    const filterValue = useSelector(selectNameFilter);
+    const error = useSelector(selectError);
+    const loading = useSelector(selectLoading);
     const dispatch = useDispatch();
     
     const handleDelete = (id) => { 
@@ -17,13 +20,17 @@ const ContactList = () => {
     );
 
     return (        
-            <ul className={styles.contactList}  >
+        <div>
+        <ul className={styles.contactList}  >
                 {visibleContacts.map((contact) => (
                     <li key={contact.id}>
                         <Contact data={contact} onDelete={handleDelete} />
                     </li>
                 ))}
-            </ul>        
+        </ul>    
+            { loading && <h2>Loading...</h2> }
+            { error && <h2>Server is dead....</h2> }
+        </div>    
     );
 };
 
