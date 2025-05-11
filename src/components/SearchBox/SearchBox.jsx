@@ -1,12 +1,12 @@
 import styles from './SearchBox.module.css';
 import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFilter, selectFilteredContacts } from '../../redux/filtersSlice';
+import { changeFilter, selectNameFilter } from '../../redux/filtersSlice';
 
 const SearchBox = () => {    
     const searchId = nanoid();
     const dispatch = useDispatch();
-    const filterValue = useSelector(selectFilteredContacts);
+    const filterValue = useSelector(selectNameFilter);
 
     const handleSearch = (e) => { 
         dispatch(changeFilter(e.target.value));
